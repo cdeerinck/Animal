@@ -62,10 +62,7 @@ class Node: Codable {
 
     func addBranch(missedGuess: String) {
         print("What was your animal ? ", terminator:"")
-        var animal = ""
-        while animal.count < 2 {
-            animal = propercase(readLine() ?? "").capitalized
-        }
+        let animal = getFixedQuestion()
         print("Please type a question that would distinguish between \(assignPrefix(animal)) and \(assignPrefix(missedGuess)) : ", terminator:"")
         let question = getFixedQuestion()
         print("And for \(assignPrefix(animal)) the answer would be : ", terminator:"")
