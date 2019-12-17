@@ -9,8 +9,8 @@
 class Node: Codable {
 
     private enum NodeType: String, Codable {
-        case question//(question: String, yesNode:Node, noNode: Node)
-        case answer//(answer: String)
+        case question
+        case answer
     }
 
     private var nodeType:NodeType
