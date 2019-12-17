@@ -7,5 +7,6 @@
 //
 
 func assignPrefix(_ thing:String) -> String {
-    return "AEIOU".contains(thing.prefix(1).capitalized) ? "an \(thing)" : "a \(thing)"
+    //Do not include U, as proper english would be "a unicorn".
+    return "AEIO".contains(thing.prefix(1).capitalized) ? "an \(thing)" : "a \(thing)"
 }
