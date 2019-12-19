@@ -14,7 +14,7 @@ func save(_ root:Node) {
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
         let data = try encoder.encode(root)
-        print("Saving knowledge of \(root.count) animals.")
+        print("Saving knowledge of \(root.animalCount) animals.")
         do {
             try data.write(to: filename)
         } catch {

@@ -10,16 +10,18 @@ import Foundation
 
 func main() {
 
-    let root = load()
-    let initialAnimalCount = root.count
+    let root = load() //This loads the entire tree, and root is simply the top of the tree.
+    let initialAnimalCount = root.animalCount
+    root.analyze()
     
     while true {
         print("Welcome to the game of Animal.  Please think of an animal.")
-        root.ask()
+        root.ask() //This begins a round of play, and continues recursively until it is done.
         print("Would you like to play again ? ", terminator:"")
         if !gotYesAnswer() {
-            let learnedAnimalCount = root.count - initialAnimalCount
-            if learnedAnimalCount > 0 {
+            //The player said they did not want to continue
+            let learnedAnimalCount = root.animalCount - initialAnimalCount
+            if learnedAnimalCount != 0 {
                 print("Should I remember the \(learnedAnimalCount) \(learnedAnimalCount>1 ? "animals" : "animal") that I learned ? ", terminator:"")
                 if gotYesAnswer() {
                     save(root)

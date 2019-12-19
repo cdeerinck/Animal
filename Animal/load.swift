@@ -14,11 +14,10 @@ func load() -> Node {
         let json = try String(contentsOf: filename, encoding: .utf8).data(using: .utf8)!
         let jsonDecoder = JSONDecoder()
         let root = try jsonDecoder.decode(Node.self, from: json)
-        print("I know of \(root.count) animals.")
+        print("I know of \(root.animalCount) animals.")
         return root
     } catch {
         print("Defaults created.  Error reading file:", error)
         return Node(question: "Does it fly", yesAnswer: "Bluebird", noAnswer: "Dolphin")
     }
-
 }

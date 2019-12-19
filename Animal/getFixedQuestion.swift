@@ -9,7 +9,7 @@
 func getFixedQuestion() -> String {
     while true {
         if var answer = readLine() {
-            if answer.count > 3 {
+            if answer.count > 2 {
                 answer = propercase(answer)
                 while "?. ".contains(answer.suffix(1)) {
                     answer = String(answer.dropLast())
